@@ -19,8 +19,11 @@ body::before {
   width: 100%;
   height: 100%;
   background: url("img/y2017-05-07-002_generated.jpg") repeat;
-  opacity: 0.1; /* اینجا کم‌رنگ می‌کنیم */
+  opacity: 0.05; /* اینجا کم‌رنگ می‌کنیم */
   z-index: -1;
+}
+body.dark::before{
+    opacity: 0.1;
 }
 header{
     width: 100%;
@@ -280,5 +283,6 @@ body.dark-mode .btn1 img{
         width: 260px;
     }
 }
+
 
 
