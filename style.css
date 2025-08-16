@@ -135,7 +135,7 @@ header{
   height: 100vh;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  color: white;
+  color: black;
   padding: 20px;
   box-shadow: -4px 0 8px rgba(0,0,0,0.4);
   z-index: 9999;
@@ -279,3 +279,4 @@ body.dark-mode .btn1 img{
         width: 260px;
     }
 }
+
