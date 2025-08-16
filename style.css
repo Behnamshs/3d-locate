@@ -217,7 +217,7 @@ body.dark-mode .btn1 img{
 /* آیکون */
 .btn2 img {
   transition: opacity 0.3s ease;
-
+  margin-left: 7.5px;
 }
 
 /* اینپوت */
@@ -231,6 +231,7 @@ body.dark-mode .btn1 img{
   opacity: 0;
   width: 0;
   transition: opacity 0.3s ease, width 0.3s ease;
+  direction: rtl;
 }
 
 /* وقتی فعال شد */
