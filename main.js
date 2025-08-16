@@ -1,38 +1,44 @@
-const slider = document.querySelector('.slider');
-let isDown = false;
-let startX;
-let scrollLeft;
+const sliders = document.querySelectorAll('.slider'); // همه اسلایدرها
 
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
+sliders.forEach(slider => {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+  // کشیدن با موس
+  slider.addEventListener('mousedown', (e) => {
+    // جلوگیری از درگ روی لینک یا دکمه
+    if (e.target.closest('a') || e.target.closest('button')) return;
 
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
 
-slider.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 1.5; // سرعت جابه‌جایی
-  slider.scrollLeft = scrollLeft - walk;
-});
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
 
-window.addEventListener('load', () =>{
-    const slider = document.querySelector('.slider');
-    slider.scrollLeft = slider.scrollWidth;
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // بعد از لود → بره آخر
+  window.addEventListener('load', () => {
+    slider.scrollLeft = slider.scrollWidth - slider.clientWidth;
+  });
 });
-slider.scrollLeft = slider.scrollWidth / 2;
 
 // Sidebar toggle
 const btn3 = document.querySelector('.btn3');
