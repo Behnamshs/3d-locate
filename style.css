@@ -1,0 +1,265 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a,button{
+    cursor: pointer;
+}
+body{
+    background-color: #f0ffff;
+    backdrop-filter: blur(100%);
+}
+header{
+    width: 100%;
+    height: 10vh; 
+    display: flex;
+    background-color: #f0ffff;
+    align-items: center;
+    z-index: 0;
+    backdrop-filter: blur(10px);
+}
+.btn1{
+    width: 5vh;
+    height: 5vh;
+    background-color: #f0ffff;
+    position: relative;
+    border-radius: 50%;
+    margin-left: 1.75%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.btn1 img{
+  margin: auto;
+  cursor: pointer;
+}
+.btn3{
+    width: 5vh;
+    height: 5vh;
+    background-color: #f0ffff;
+    position: absolute;
+    border-radius: 50%;
+    right: 1.75%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.btn3 img{
+  margin: auto;
+  cursor: pointer;
+}
+.container1{
+    margin-top: 30px;
+    width: 100%;
+    height: 500px;
+}
+.container1 h1{
+    padding-right: 2.5%;
+    padding-top: 2.5%;
+    direction: rtl;
+}
+.slider{
+    user-select:none;
+    cursor: grab;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-behavior: smooth;
+}
+.slider::-webkit-scrollbar {
+    display: none;
+  }
+  .slider:active{
+    cursor: grabbing;
+  }
+.option1{
+    flex: 0 0 85%; /* هر کارت 85٪ عرض صفحه باشه */
+    background: white;
+    border-radius: 1rem;
+    scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.option1 img{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 100%;
+    height: 77.5%;
+    cursor: auto;
+}
+.option1 h2{
+    direction: rtl;
+    margin-right: 5px;
+}
+.option1 p{
+    direction: rtl;
+    margin-right: 5px;
+    
+}
+.option1 button{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 35%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.option1 button:hover{
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100vh;
+  background-color: #979a9a;
+  color: white;
+  padding: 20px;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.4);
+  z-index: 9999;
+  /* حالت اولیه برای انیمیشن */
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: none;
+  direction: rtl;
+}
+.sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sidebar img{
+  margin-right: 2.5px;
+
+}
+.sidebar h3{
+  display: inline-block;
+}
+.sidebar button{
+  font-size: xx-large;
+}
+.sidebar a {
+  margin-right: 2.5px;
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 6px 0;
+}
+.sidebar a:hover {
+  color: white;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+/* حالت دارک مود */
+body.dark-mode {
+  background-color: #1a2a2a; /* رنگ تیره‌ی مکمل */
+  color: #f0ffff;
+}
+
+header,
+.btn1,
+.btn2,
+.btn3 {
+  transition: background-color 0.3s;
+}
+
+body.dark-mode header {
+  background-color: #1a2a2a;
+}
+body.dark-mode .option1{
+  box-shadow: rgb(60, 64, 67) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+body.dark-mode .btn1,
+body.dark-mode .btn2,
+body.dark-mode .btn3 {
+  background-color: #263636;
+}
+body.dark-mode .option1 {
+  background-color: #2a3a3a;
+  color: #f0ffff;
+}
+body.dark-mode .btn1 img{
+  content: url("https://img.icons8.com/ios-glyphs/30/sun.png");
+  width: 20;
+  height: 20;
+  transition: .5s;
+}
+.btn2 {
+  width: 5vh;
+  height: 5vh;
+  background-color: #e7f5f5;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0 10px;
+  transition: width 0.4s ease, background 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* آیکون */
+.btn2 img {
+  transition: opacity 0.3s ease;
+
+}
+
+/* اینپوت */
+.btn2 input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  font-size: 14px;
+  background: transparent;
+  opacity: 0;
+  width: 0;
+  transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+/* وقتی فعال شد */
+.btn2.active {
+  width: 200px;
+  justify-content: flex-start;
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.btn2.active input {
+  opacity: 1;
+  width: 100%;
+}
+
+.btn2.active img {
+  opacity: 0.5;
+}
+@media (min-width: 1024px){
+    .slider{
+        scroll-snap-type: none;
+    }
+    .slider::-webkit-scrollbar {
+    display: block;
+  }
+    .option1{
+        flex: 0 0 18%;
+    }
+    .sidebar{
+        width: 260px;
+    }
+}
