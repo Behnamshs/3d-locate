@@ -22,9 +22,6 @@ body::before {
   opacity: 0.05; /* اینجا کم‌رنگ می‌کنیم */
   z-index: -1;
 }
-body.dark::before{
-    opacity: 0.1;
-}
 header{
     width: 100%;
     height: 10vh; 
@@ -70,7 +67,10 @@ header{
 .container1{
     margin-top: 30px;
     width: 100%;
-    height: 500px;
+    height: 325px;
+}
+.container1:nth-child(2){
+  margin-top: 0px;
 }
 .container1 h1{
     padding-right: 2.5%;
@@ -94,18 +94,19 @@ header{
     cursor: grabbing;
   }
 .option1{
-    flex: 0 0 85%; /* هر کارت 85٪ عرض صفحه باشه */
+    flex: 0 0 60%; /* هر کارت 85٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
     scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
     overflow: hidden;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+
 .option1 img{
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     width: 100%;
-    height: 77.5%;
+    height: 70%;
     cursor: auto;
 }
 .option1 h2{
@@ -115,21 +116,7 @@ header{
 .option1 p{
     direction: rtl;
     margin-right: 5px;
-    
 }
-.option1 button{
-    margin-bottom: 10px;
-    margin-left: 10px;
-    height: 35px;
-    width: 35%;
-    border: none;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.option1 button:hover{
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-}
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -163,6 +150,10 @@ header{
 }
 .sidebar button{
   font-size: xx-large;
+  color: black;
+}
+body.dark-mode .sidebar button{
+  color: white;
 }
 .sidebar a {
   margin-right: 2.5px;
@@ -283,6 +274,3 @@ body.dark-mode .btn1 img{
         width: 260px;
     }
 }
-
-
-
