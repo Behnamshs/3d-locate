@@ -135,7 +135,7 @@ header{
   height: 100vh;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  color: black;
+  color: white;
   padding: 20px;
   box-shadow: -4px 0 8px rgba(0,0,0,0.4);
   z-index: 9999;
@@ -156,13 +156,14 @@ header{
 }
 .sidebar h3{
   display: inline-block;
+    color:black;
 }
 .sidebar button{
   font-size: xx-large;
 }
 .sidebar a {
   margin-right: 2.5px;
-  color: #ddd;
+  color: black;
   text-decoration: none;
   display: block;
   padding: 6px 0;
@@ -279,4 +280,5 @@ body.dark-mode .btn1 img{
         width: 260px;
     }
 }
+
 
