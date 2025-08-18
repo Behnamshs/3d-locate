@@ -162,7 +162,7 @@ header h2{
     cursor: grabbing;
   }
 .option1{
-  max-height: 275px;
+  max-height: 325px;
     flex: 0 0 60%; /* هر کارت 85٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
@@ -312,3 +312,4 @@ body.dark-mode .btn1 img{
         width: 260px;
     }
 }
+
