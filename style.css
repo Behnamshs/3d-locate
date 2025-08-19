@@ -135,7 +135,7 @@ header h2{
 .container1{
     margin-top: 30px;
     width: 100%;
-    height: 390px;
+    height: 325px;
 }
 .container1:nth-child(2){
   margin-top: 0px;
@@ -162,7 +162,7 @@ header h2{
     cursor: grabbing;
   }
 .option1{
-  max-height: 340px;
+  max-height: 275px;
     flex: 0 0 60%; /* هر کارت 85٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
@@ -198,12 +198,12 @@ header h2{
   position: fixed;
   top: 0;
   right: 0;
-  width: 90%;
+  width: 100%;
   height: 100vh;
   background-color: transparent;
   backdrop-filter: blur(10px);
   color: white;
-  padding: 20px;
+  
   box-shadow: -4px 0 8px rgba(0,0,0,0.4);
   z-index: 9999;
   /* حالت اولیه برای انیمیشن */
@@ -217,13 +217,13 @@ header h2{
   transform: translateX(0);
   opacity: 1;
 }
-.sidebar img{
+.sidebar .profile{
   margin-right: 2.5px;
-
+  margin-top: 15px;
 }
 .sidebar h3{
   display: inline-block;
-    color:black;
+  color:black;
 }
 .sidebar button{
   font-size: xx-large;
@@ -232,12 +232,29 @@ header h2{
 body.dark-mode .sidebar button{
   color: white;
 }
-.sidebar a {
-  margin-right: 2.5px;
+.sidebar .logo{
+  width: 60%;
+  display: block;
+  margin-right: 20%;
+}
+.sidebar li{
+  list-style-type: none;
+  width: 100%;
+  height: 8vh;
+  border-bottom: solid 2px #000000;
+  max-height: 8vh;
+}
+.sidebar li:nth-child(1){
+  border-top: #000000 2px solid;
+  height: 10vh;
+  max-height: 10vh;
+}
+.sidebar a{
+  margin-right: 10px;
+  margin-top: 10px;
   color: black;
   text-decoration: none;
   display: block;
-  padding: 6px 0;
 }
 .sidebar a:hover {
   color: white;
@@ -312,7 +329,3 @@ body.dark-mode .btn1 img{
         width: 260px;
     }
 }
-
-
-
-
