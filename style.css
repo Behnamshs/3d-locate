@@ -154,6 +154,7 @@ header h2{
     gap: 1rem;
     padding: 1rem;
     scroll-behavior: smooth;
+    overflow-y: auto;
 }
 .slider::-webkit-scrollbar {
     display: none;
@@ -394,3 +395,4 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
+
