@@ -319,8 +319,8 @@ body.dark-mode .btn1 img{
 }
 
 .dropbtn {
-  width: 25px;
-  height: 30px;
+  width: 35px;
+  height: 42px;
   background-color: #333;
   color: #fff;
   border: none;
@@ -402,6 +402,7 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
+
 
 
 
