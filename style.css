@@ -206,15 +206,19 @@ header h2{
   color: white;
   box-shadow: -4px 0 8px rgba(0,0,0,0.4);
   z-index: 99;
-  /* حالت اولیه برای انیمیشن */
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   display: none;
   direction: rtl;
   transform: translateX(100%);
-  overflow-y: auto;   /* ✅ اسکرول فعال داخل سایدبار */
-  overscroll-behavior: contain; /* 🚫 جلوگیری از اسکرول صفحه اصلی */
+  overflow-y: auto;          /* ✅ فقط سایدبار اسکرول داشته باشه */
+  overscroll-behavior: contain;
+}
+/* وقتی منو بازه، بدنه قفل میشه */
+.body-locked {
+  height: 100vh;
+  overflow: hidden;
 }
 .sidebar.open {
   transform: translateX(0);
@@ -398,6 +402,7 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
+
 
 
 
