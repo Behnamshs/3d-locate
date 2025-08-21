@@ -49,17 +49,16 @@ btn3.addEventListener('click', () => {
   sidebar.style.display = 'block';
   setTimeout(() => {
     sidebar.classList.add('open');
-    document.body.style.overflow = 'hidden'; // 🚫 جلوگیری از اسکرول
+    document.body.style.overflow = 'hidden'; // 🚫 قفل اسکرول صفحه اصلی
   }, 10);
 })
 
-// بستن منو
 closeBtn.addEventListener('click', () => {
   sidebar.classList.remove('open');
   sidebar.addEventListener('transitionend', () => {
     if (!sidebar.classList.contains('open')) {
       sidebar.style.display = 'none';
-      document.body.style.overflow = ''; // ✅ برگردوندن اسکرول
+      document.body.style.overflow = ''; // ✅ اسکرول اصلی برگرده
     }
   }, { once: true });
 });
