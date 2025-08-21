@@ -1,4 +1,4 @@
-const sliders = document.querySelectorAll('.slider'); // همه اسلایدرها
+const sliders = document.querySelectorAll('.slider');
 
 sliders.forEach(slider => {
   let isDown = false;
@@ -44,21 +44,26 @@ sliders.forEach(slider => {
 const btn3 = document.querySelector('.btn3');
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = document.querySelector('.close-btn')
+// باز شدن منو
 btn3.addEventListener('click', () => {
   sidebar.style.display = 'block';
   setTimeout(() => {
     sidebar.classList.add('open');
+    document.body.style.overflow = 'hidden'; // 🚫 جلوگیری از اسکرول
   }, 10);
 })
+
+// بستن منو
 closeBtn.addEventListener('click', () => {
   sidebar.classList.remove('open');
   sidebar.addEventListener('transitionend', () => {
     if (!sidebar.classList.contains('open')) {
       sidebar.style.display = 'none';
+      document.body.style.overflow = ''; // ✅ برگردوندن اسکرول
     }
   }, { once: true });
 });
-
+//dark mode&lightmode
 const btn1 = document.querySelector('.btn1');
 btn1.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
@@ -66,6 +71,7 @@ btn1.addEventListener('click', () => {
 const btn2 = document.querySelector('.btn2');
 const input = btn2.querySelector('input');
 
+//baraye bastan search
 // وقتی روی دکمه کلیک شد
 btn2.addEventListener('click', (e) => {
   if (!btn2.classList.contains('active')) {
