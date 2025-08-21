@@ -49,7 +49,7 @@ btn3.addEventListener('click', () => {
   sidebar.style.display = 'block';
   setTimeout(() => {
     sidebar.classList.add('open');
-    document.body.style.overflow = 'hidden'; // 🚫 قفل اسکرول صفحه اصلی
+    document.body.classList.add('body-locked'); // 🚫 قفل شدن اسکرول
   }, 10);
 })
 
@@ -58,7 +58,7 @@ closeBtn.addEventListener('click', () => {
   sidebar.addEventListener('transitionend', () => {
     if (!sidebar.classList.contains('open')) {
       sidebar.style.display = 'none';
-      document.body.style.overflow = ''; // ✅ اسکرول اصلی برگرده
+      document.body.classList.remove('body-locked'); // ✅ باز شدن اسکرول
     }
   }, { once: true });
 });
