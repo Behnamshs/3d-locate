@@ -135,7 +135,7 @@ header h2{
 .container1{
     margin-top: 30px;
     width: 100%;
-    height: 360px;
+    height: 375px;
 }
 .container1:nth-child(2){
   margin-top: 0px;
@@ -163,7 +163,7 @@ header h2{
     cursor: grabbing;
   }
 .option1{
-  max-height: 325px;
+  max-height: 335px;
     flex: 0 0 60%; /* هر کارت 85٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
@@ -402,6 +402,7 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
+
 
 
 
