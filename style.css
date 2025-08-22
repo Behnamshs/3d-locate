@@ -16,6 +16,7 @@ body{
     backdrop-filter: blur(100%);
     position: relative;
     z-index: 0;
+    
 }
 body::before {
   content: "";
@@ -135,7 +136,7 @@ header h2{
 .container1{
     margin-top: 30px;
     width: 100%;
-    height: 375px;
+    height: 360px;
 }
 .container1:nth-child(2){
   margin-top: 0px;
@@ -163,7 +164,7 @@ header h2{
     cursor: grabbing;
   }
 .option1{
-  max-height: 335px;
+  max-height: 320px;
     flex: 0 0 60%; /* هر کارت 85٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
@@ -402,9 +403,3 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
-
-
-
-
-
-
