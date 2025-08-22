@@ -49,16 +49,16 @@ btn3.addEventListener('click', () => {
   sidebar.style.display = 'block';
   setTimeout(() => {
     sidebar.classList.add('open');
-    document.body.classList.add('body-locked'); // 🚫 قفل شدن اسکرول
+    document.body.style.overflow = 'hidden'; // قفل اسکرول صفحه اصلی
   }, 10);
-})
+});
 
 closeBtn.addEventListener('click', () => {
   sidebar.classList.remove('open');
   sidebar.addEventListener('transitionend', () => {
     if (!sidebar.classList.contains('open')) {
       sidebar.style.display = 'none';
-      document.body.classList.remove('body-locked'); // ✅ باز شدن اسکرول
+      document.body.style.overflow = ''; // آزاد شدن اسکرول صفحه اصلی
     }
   }, { once: true });
 });
