@@ -44,6 +44,7 @@ sliders.forEach(slider => {
 const btn3 = document.querySelector('.btn3');
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = document.querySelector('.close-btn')
+// باز شدن منو
 btn3.addEventListener('click', () => {
   sidebar.style.display = 'block';
   setTimeout(() => {
@@ -85,4 +86,3 @@ document.addEventListener('click', (e) => {
     input.value = "";
   }
 });
-
