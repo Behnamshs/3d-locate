@@ -194,7 +194,7 @@ header h2{
 }
 .option1 .share,.like,.comment{
  margin-left: 10px;
- margin-top: 15px;
+ margin-top: 25px;
 }
 .sidebar {
   position: fixed;
@@ -214,12 +214,12 @@ header h2{
   direction: rtl;
   transform: translateX(100%);
   overflow-y: auto;          /* ✅ فقط سایدبار اسکرول داشته باشه */
-  overscroll-behavior: contain;
+  /*overscroll-behavior: contain;*/
+  -webkit-overflow-scrolling: touch;
 }
 /* وقتی منو بازه، بدنه قفل میشه */
 .body-locked {
   height: 100vh;
-  overflow: hidden;
 }
 .sidebar.open {
   transform: translateX(0);
@@ -403,4 +403,3 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
-
