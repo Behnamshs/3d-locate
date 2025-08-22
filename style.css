@@ -221,6 +221,7 @@ header h2{
 .body-locked {
   position: fixed;
   width: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
 }
@@ -406,3 +407,4 @@ body.dark-mode .dropdown-content a:hover{
         width: 260px;
     }
 }
+
