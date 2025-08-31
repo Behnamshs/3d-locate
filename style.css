@@ -117,11 +117,12 @@ header h2{
 .option1 h2{
     direction: rtl;
     margin-right: 5px;
+    margin-top: 2vh;
 }
 .option1 p{
     direction: rtl;
     margin-right: 5px;
-    margin-top: 5px;
+    margin-top: 1vh;
 }
 .option1 h4{
   display: inline-block;
@@ -365,3 +366,4 @@ body.dark-mode .dropdown-content a:hover{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
+
