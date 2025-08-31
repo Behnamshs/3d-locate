@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: B-titr;
 }
 .ga-maamli-regular {
   font-family: "Ga Maamli", sans-serif;
@@ -38,74 +39,7 @@ header{
     z-index: 0;    
     position: relative;
 }
-.btn1{
-    width: 5vh;
-    height: 5vh;
-    background-color: #f0ffff;
-    position: relative;
-    border-radius: 50%;
-    margin-left: 1.75%;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    border: none;
-}
-.btn1 img{
-  margin: auto;
-  cursor: pointer;
-}
-.btn2 {
-  width: 5vh;
-  height: 5vh;
-  background-color: #e7f5f5;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  padding: 0 10px;
-  transition: width 0.4s ease, background 0.4s ease;
-  overflow: hidden;
-  position: relative;
-}
 
-/* آیکون */
-.btn2 img {
-  transition: opacity 0.3s ease;
-  margin-left: 7.5px;
-}
-
-/* اینپوت */
-.btn2 input {
-  border: none;
-  outline: none;
-  flex: 1;
-  padding: 5px;
-  font-size: 14px;
-  background: transparent;
-  opacity: 0;
-  width: 0;
-  transition: opacity 0.3s ease, width 0.3s ease;
-  direction: rtl;
-}
-
-/* وقتی فعال شد */
-.btn2.active {
-  width: 350px;
-  justify-content: flex-start;
-  background: white;
-  border: 1px solid #ccc;
-}
-
-.btn2.active input {
-  opacity: 1;
-  width: 100%;
-}
-
-.btn2.active img {
-  opacity: 0.5;
-  margin-left: 0px;
-}
 .btn3{
     width: 5vh;
     height: 5vh;
@@ -142,7 +76,7 @@ header h2{
   margin-top: 0px;
 }
 .container1 h1{
-    padding-right: 2.5%;
+    margin-right: 4vh;
     padding-top: 2.5%;
     direction: rtl;
 }
@@ -170,7 +104,7 @@ header h2{
     border-radius: 1rem;
     scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
     overflow: hidden;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .option1 .img{
@@ -192,9 +126,10 @@ header h2{
 .option1 h4{
   display: inline-block;
 }
-.option1 .share,.like,.comment{
- margin-left: 10px;
- margin-top: 15px;
+.option1 i{
+  font-size: 18px;
+  margin-left: 5%;
+  margin-top: 3.5vh;
 }
 
 .sidebar {
@@ -229,17 +164,31 @@ header h2{
   transform: translateX(0);
   opacity: 1;
 }
-.sidebar .profile{
-  margin-right: 2.5px;
-  margin-top: 15px;
-}
 .sidebar h3{
   display: inline-block;
   color:black;
 }
-.sidebar button{
+.sidebar .close-btn{
   font-size: xx-large;
-  color: black;
+  color: black;  
+  position: absolute;
+  top: -1vh;
+}
+.btn1{
+    width: 5vh;
+    height: 5vh;
+    background-color: #f0ffff;
+    position: absolute;
+    left: 4vh;
+    top: 1.5vh;
+    border-radius: 50%;
+    margin-left: 1.75%;
+    border: .1px solid black;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+}
+body.dark-mode .btn1{
+  border: #ccc .1px solid;
 }
 body.dark-mode .sidebar button{
   color: white;
@@ -255,6 +204,7 @@ body.dark-mode .sidebar button{
   height: 8vh;
   border-bottom: solid 2px #000000;
   max-height: 8vh;
+  
 }
 .sidebar li:nth-child(1){
   border-top: #000000 2px solid;
@@ -267,6 +217,7 @@ body.dark-mode .sidebar button{
   color: black;
   text-decoration: none;
   display: block;
+  font-weight: 500;
 }
 .sidebar a:hover {
   color: white;
@@ -298,7 +249,7 @@ body.dark-mode header {
   background-color: transparent;
 }
 body.dark-mode .option1{
-  box-shadow: rgb(60, 64, 67) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgb(60, 64, 67) 0px 3px 6px, rgba(60, 64, 67, 0.15) 0px 3px 6px;
 }
 body.dark-mode .btn1,
 body.dark-mode .btn2,
@@ -306,7 +257,7 @@ body.dark-mode .btn3 {
   background-color: #263636;
 }
 body.dark-mode .option1 {
-  background-color: #2a3a3a;
+  background-color: #304242;
   color: #f0ffff;
 }
 body.dark-mode .btn1 img{
@@ -406,5 +357,11 @@ body.dark-mode .dropdown-content a:hover{
     .sidebar{
         width: 260px;
     }
+    .option1 i{
+      font-size: 24px;
+    }
 }
-
+@font-face {
+   font-family: B-titr;
+   src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
+}
