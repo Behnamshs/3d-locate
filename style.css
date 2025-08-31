@@ -117,7 +117,7 @@ header h2{
 .option1 h2{
     direction: rtl;
     margin-right: 5px;
-    margin-top: 2vh;
+    margin-top: 1vh;
 }
 .option1 p{
     direction: rtl;
@@ -130,7 +130,7 @@ header h2{
 .option1 i{
   font-size: 18px;
   margin-left: 5%;
-  margin-top: 3.5vh;
+  margin-top: 6vh;
 }
 
 .sidebar {
@@ -366,4 +366,5 @@ body.dark-mode .dropdown-content a:hover{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
+
 
