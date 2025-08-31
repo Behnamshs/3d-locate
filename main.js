@@ -67,22 +67,3 @@ const btn1 = document.querySelector('.btn1');
 btn1.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
-const btn2 = document.querySelector('.btn2');
-const input = btn2.querySelector('input');
-
-//baraye bastan search
-// وقتی روی دکمه کلیک شد
-btn2.addEventListener('click', (e) => {
-  if (!btn2.classList.contains('active')) {
-    btn2.classList.add('active');
-    input.focus();
-  }
-});
-
-// وقتی بیرون کلیک شد، ببند
-document.addEventListener('click', (e) => {
-  if (!btn2.contains(e.target)) {
-    btn2.classList.remove('active');
-    input.value = "";
-  }
-});
