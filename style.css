@@ -173,7 +173,7 @@ header h2{
   font-size: xx-large;
   color: black;  
   position: absolute;
-  top: -1vh;
+  top: 1.5vh;
 }
 .btn1{
     width: 5vh;
@@ -366,5 +366,6 @@ body.dark-mode .dropdown-content a:hover{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
+
 
 
