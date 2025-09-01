@@ -121,7 +121,7 @@ header h2{
 }
 .option1 p{
     direction: rtl;
-    margin-right: 5px;
+    margin-right: 7.5px;
     margin-top: 2.5px;
 }
 .option1 h4{
@@ -173,7 +173,7 @@ header h2{
   font-size: xx-large;
   color: black;  
   position: absolute;
-  top: -1vh;
+  top: 2vh;
 }
 .btn1{
     width: 5vh;
