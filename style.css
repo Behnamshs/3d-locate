@@ -117,10 +117,12 @@ header h2{
 .option1 h2{
     direction: rtl;
     margin-right: 5px;
+    margin-top: 5px;
 }
 .option1 p{
     direction: rtl;
     margin-right: 5px;
+    margin-top: 2.5px;
 }
 .option1 h4{
   display: inline-block;
@@ -128,7 +130,7 @@ header h2{
 .option1 i{
   font-size: 18px;
   margin-left: 5%;
-  margin-top: 3.5vh;
+  margin-top: 4vh;
 }
 
 .sidebar {
