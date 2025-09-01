@@ -68,10 +68,8 @@ header h2{
   margin-right: 45px;
 }
 .example{
-  display: block;
   width: 90%;
   margin-left: 5%;
-  filter: blur(1px);
 }
 .container1{
     margin-top: 30px;
@@ -149,7 +147,7 @@ header h2{
   overflow-y: auto;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  z-index: 99;
+  z-index: 1232342499;
   transform: translateX(100%);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -158,6 +156,7 @@ header h2{
   box-shadow: -4px 0 8px rgba(0,0,0,0.4);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; /* نرم روی موبایل */
+  isolation: isolate;
 }
 /* وقتی منو بازه، بدنه قفل میشه */
 .body-locked {
@@ -384,4 +383,3 @@ body.dark-mode .dropdown-content a:hover{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
-
