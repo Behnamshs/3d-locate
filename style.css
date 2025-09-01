@@ -69,7 +69,6 @@ header h2{
 }
 .example{
   display: block;
-  z-index: 1;
   width: 90%;
   margin-left: 5%;
   filter: blur(1px);
@@ -385,3 +384,4 @@ body.dark-mode .dropdown-content a:hover{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
+
