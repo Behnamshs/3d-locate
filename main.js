@@ -67,3 +67,11 @@ const btn1 = document.querySelector('.btn1');
 btn1.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
+
+ const menu = document.getElementById("menu");
+  const btn = document.getElementById("menuBtn");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    btn.textContent = menu.classList.contains("open") ? "✕" : "≡";
+  });
