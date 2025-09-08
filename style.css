@@ -39,7 +39,6 @@ header{
     z-index: 2;    
     position: relative;
     backdrop-filter: blur(10px);
-    position: fixed;
 }
 header img{
   position: absolute;
@@ -396,5 +395,6 @@ body.dark-mode .btn1 img{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
+
 
 
