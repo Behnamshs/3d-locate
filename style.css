@@ -84,7 +84,7 @@ header h2{
     height: 310px;
 }
 #container1{
-  margin-top: 20vh;
+  margin-top: 25vh;
 }
 .container1:nth-child(2){
   margin-top: 0px;
@@ -395,3 +395,4 @@ body.dark-mode .btn1 img{
    font-family: B-titr;
    src: url(font/B-Titr/B\ Titr\ Bold_0.ttf);
 }
+
