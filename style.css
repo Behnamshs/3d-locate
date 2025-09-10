@@ -2,8 +2,61 @@
   padding: 0;
   margin: 0;
 }
+body{
+  background-color: #faf9f6;
+}
+/* صفحه لودینگ کلی */
+.preloader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 99999;
+  flex-direction: column;
+  transition: opacity 0.6s ease;
+}
+
+/* متن اسم */
+.preloader .brand {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+/* درصد */
+.preloader .percent {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.preloader .brand,
+.preloader .percent {
+  background: #fff; /* متن روی بک سفید کوچیک باشه */
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.loader-rects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader-rect {
+  flex: 1;
+  background: #1e3a8a; /* هم‌رنگ سمت چپ */
+  transform: translateY(100%);
+  transition: transform 0.6s ease;
+}
 .event{
-  background-color: #1f1717;
+  background-color: #010a33;
   width: 100%;
   height: 4vh;
   text-align: center;
@@ -20,6 +73,23 @@
 .headline img{
   position: absolute;
 }
+.bg-blur{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px);
+  transition: backdrop-filter 1s ease;
+  z-index: 1;
+}
+.headline.blur .bg-blur{
+  backdrop-filter: blur(6px);
+}
+.info, .headline input, header{
+  position: relative;
+  z-index: 2;
+}
 header{
   position: fixed;
   width: 100%;
@@ -27,6 +97,8 @@ header{
   backdrop-filter: blur(10px);
   display: block;
   position: relative;
+  background-image: linear-gradient(to bottom,#111111,#1a1a1a,#121212,#1c1c1c);
+  color: #ffffff;
 }
 .profile{
   width: 4vh;
@@ -45,7 +117,7 @@ header h2{
   left: 4.5vh;
   font-size: medium;
 }
-.menu{
+.btn3{
   background-color: transparent;
   width: 5vh;
   height: 5vh;
@@ -58,16 +130,49 @@ header h2{
   text-align: center;
   font-weight: 500;
   font-size: x-large;
+  color: #ffffff;
+}
+.info{
+  width: 90%;
+  height: 15vh;
+  z-index: 999;
+  position: absolute;
+  left: 5%;
+  top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info h5{
+  color: #ffffff;
+  display: block;  
+
+}
+.info img{
+  position: absolute;
+  bottom: 7.5px;
 }
 .headline input{
   position: absolute;
   height: 5.5vh;
   width: 60%;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-left: 20%;
   direction: rtl;
   padding-right: 5px;
   bottom: 10px;
+  transform: translateY(30px);
+}
+.info h5,.info img,.headline input{
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.info.show h5,.info.show img{
+  opacity: 1;
+}
+.headline.show input{
+  opacity: 1;
+  transform: translateY(0);
 }
 .status{
   position: relative;
@@ -91,6 +196,34 @@ header h2{
   background: linear-gradient(white,white) padding-box, linear-gradient(to right, #400576, #ff00b3) border-box;
   border: 2px solid transparent;
   overflow: hidden;
+}
+.status-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  cursor: grab;
+}
+
+.status-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.status-scroll .story {
+  flex: 0 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(white, white) padding-box, linear-gradient(to right, #400576, #ff00b3) border-box;
+  border: 2px solid transparent;
+  overflow: hidden;
+  scroll-snap-align: center;
+}
+
+.status-scroll .story img {
+  width: 100%;
+  height: 100%;
 }
 .story img{
     width: 100%;
@@ -126,13 +259,15 @@ header h2{
     cursor: grabbing;
   }
 .option1{
-  max-height: 250px;
+    height: 250px;
     flex: 0 0 60%; /* هر کارت 85٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
     scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
     overflow: hidden;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    text-decoration: none;
+    color: #111111;
 }
 
 .option1 .img{
@@ -141,31 +276,64 @@ header h2{
     width: 100%;
     height: 70%;
     cursor: auto;
-    opacity: .5;
+    overlay: blur(10px);
     position: relative;
 }
 .img .ax{
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: absolute;
+ height:100%;
+ width:100%;
+ z-index:1;
+ position:absolute; }
+.fuck{ 
+  overflow: hidden;
+  margin-left: 5%;
+  width:100%;
+  height:100%;
+  z-index:3;
+  position:absolute;
 }
-.fuck{
-  width: 100%;
-  z-index: 2;
-  position: absolute;
+.overlay{ 
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter:blur(6px);
+  z-index:2;
+}
+.actions{ 
+  position:absolute; 
+  left:5px; 
+  top:30px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:12px; 
+  z-index:4; 
+  color:#faf9f6; 
+  font-size:18px; 
+  text-align:center; 
+}
+.action-item{
+  margin-top: -25px;
+}
+.action-item span{ 
+  display:block;
+  font-size:12px;
+  margin-top:3px;
 }
 .option1 h2{
   text-align: center;
     direction: rtl;
     margin-right: 5px;
     margin-top: 5px;
+    
 }
 .option1 p{
   text-align: center;
     direction: rtl;
     margin-right: 7.5px;
     margin-top: 5px;
+    
 }
 .option1 h4{
   display: inline-block;
@@ -174,6 +342,233 @@ header h2{
   font-size: 18px;
   margin-left: 5%;
   margin-top: 4vh;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: #faf9f6;
+  backdrop-filter: blur(10px);
+  z-index: 1232342499;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: none;
+  direction: rtl;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* نرم روی موبایل */
+  isolation: isolate;
+}
+/* وقتی منو بازه، بدنه قفل میشه */
+.body-locked {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sidebar h3{
+  display: inline-block;
+  color:#010a33;
+}
+.sidebar .close-btn{
+  font-size: xx-large;
+  color: #010a33;  
+  position: absolute;
+  top: 2vh;
+}
+.sidebar .logo{
+  width: 60%;
+  display: block;
+  margin-right: 20%;
+}
+.sidebar li{
+  list-style-type: none;
+  width: 100%;
+  height: 8vh;
+  border-bottom: solid 2px #010a33;
+  max-height: 8vh;
+  
+}
+.sidebar li:nth-child(1){
+  border-top: #010a33 2px solid;
+  height: 10vh;
+  max-height: 10vh;
+}
+.sidebar a{
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #010a33;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  color: white;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.btn1{
+    width: 5vh;
+    height: 5vh;
+    background-color: #faf9f6;
+    position: absolute;
+    left: 4vh;
+    top: 14px;
+    border-radius: 50%;
+    margin-left: 1.75%;
+    border: .1px solid black;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    border: none;
+}
+.accordion-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #010a33;
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  
+  background: #f1f1f1;
+  text-align: center;
+}
+
+.accordion-content li {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-content li a {
+  color: #010a33;
+  font-weight: 600;
+  text-align: center;
+}
+
+.accordion.active .accordion-content {
+  max-height: 300px; /* بسته به تعداد آیتم‌ها تغییر بده */
+}
+.sidebar-socials {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.sidebar-socials .circle {
+  width: 45px;
+  height: 45px;
+  background: #010a33;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.sidebar-socials .circle img {
+  width: 22px;
+  height: 22px;
+  
+}
+
+.sidebar-socials .circle:hover {
+  background: #ff3b3b; /* رنگ دلخواه هنگام هاور */
+}
+.menu {
+  top: 50vh;
+  position: fixed;
+  margin-left: -30px; /* نصف دکمه بیرون باشه */ 
+  z-index: 9999;
+}
+.menu-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  font-size: 26px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s ease, margin-left 0.4s ease;
+  position: relative;
+  z-index: 10000;
+}
+.menu.open .menu-btn {
+  margin-left: 30px;
+  transform: rotate(180deg);
+}
+.menu-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translate(0,0);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+.menu-item:nth-child(2) { background: #010a33;} /* بالا */
+.menu-item:nth-child(3) { background: #010a33;} /* راست بالا */
+.menu-item:nth-child(4) { background: #010a33;} /* راست پایین */
+.menu-item:nth-child(5) { background: #010a33;} /* پایین */
+
+    /* باز شدن (بیشتر سمت راست) */
+.menu.open .menu-item:nth-child(2) {
+  transform: translate(25px,-80px);
+  opacity: 1;
+}
+.menu.open .menu-item:nth-child(3) {
+  transform: translate(90px,-40px);
+  opacity: 1;
+}
+.menu.open .menu-item:nth-child(4) {
+  transform: translate(90px,40px);
+  opacity: 1;
+}
+.menu.open .menu-item:nth-child(5) {
+  transform: translate(25px,80px);
+  opacity: 1;
+}
+.menu-item:nth-child(1) img{
+  margin-left: 0;
+}
+.menu-item img{
+  margin-left: 5px;
 }
 @media (min-width:630px){
 .headline{
