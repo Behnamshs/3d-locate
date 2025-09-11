@@ -135,41 +135,40 @@ window.addEventListener('load', () => {
   const brandEl = document.querySelector(".brand");
   const rects = Array.from(document.querySelectorAll(".loader-rect"));
 
+  // شروع درصد لود
   let pct = 0;
 
-  // تابع برای افزایش درصد تا 100
-  function incrementPercent(target, callback){
-    const interval = setInterval(() => {
-      if(pct < target){
-        pct++;
-        percentEl.textContent = pct + "%";
-      } else {
-        clearInterval(interval);
-        callback();
-      }
-    }, 20);
-  }
-
-  // وقتی همه منابع واقعی لود شدند
+  // وقتی صفحه واقعی لود شد
   window.addEventListener('load', () => {
-    // درصد تا 100 بره و بعد مستطیل‌ها انیمیشن بگیرند
-    incrementPercent(100, startRectsAnimation);
+    // افزایش درصد تا 100
+    const interval = setInterval(() => {
+      pct++;
+      percentEl.textContent = pct + "%";
+      if(pct >= 100){
+        clearInterval(interval);
+        startRectsAnimation();
+      }
+    }, 20); // می‌تونی سرعتشو تغییر بدی
   });
 
   function startRectsAnimation(){
+    // مخفی کردن متن لودینگ
     brandEl.style.display = "none";
     percentEl.style.display = "none";
 
+    // مستطیل‌ها از پایین به بالا
     rects.forEach((rect, i) => {
       setTimeout(() => {
         rect.style.transform = "translateY(0%)";
       }, i * 300);
     });
 
+    // بعد از حرکت مستطیل‌ها، پس‌زمینه preloader محو بشه
     setTimeout(() => {
       preloader.classList.add("done-bg");
     }, rects.length * 300 + 500);
 
+    // بعد از تمام انیمیشن، preloader حذف شود
     setTimeout(() => {
       rects.forEach((rect, i) => {
         setTimeout(() => {
