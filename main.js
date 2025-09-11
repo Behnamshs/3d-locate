@@ -136,65 +136,49 @@ window.addEventListener('load', () => {
   const rects = Array.from(document.querySelectorAll(".loader-rect"));
 
   let pct = 0;
-  const interval = setInterval(() => {
-  pct++;
-  percentEl.textContent = pct + "%";
-  if(pct >= 100){
-    clearInterval(interval);
 
-    // بررسی مدت زمان واقعی لود
-    const elapsed = Date.now() - startTime;
-    const remaining = Math.max(minLoadTime - elapsed, 0);
-
-    setTimeout(() => {
-      startRectsAnimation(); // بعد از رسیدن حداقل زمان، انیمیشن مستطیل‌ها شروع میشه
-    }, remaining);
+  // تابع برای افزایش درصد تا 100
+  function incrementPercent(target, callback){
+    const interval = setInterval(() => {
+      if(pct < target){
+        pct++;
+        percentEl.textContent = pct + "%";
+      } else {
+        clearInterval(interval);
+        callback();
+      }
+    }, 20);
   }
-}, 20);
-  
-const minLoadTime = 2000; // حداقل 2 ثانیه لودینگ
-const startTime = Date.now();
 
-function startRectsAnimation(){
-  // متن و درصد رو مخفی کن
-  brandEl.style.display = "none";
-  percentEl.style.display = "none";
-
-  // مرحله اول: یکی یکی از پایین بیان بالا
-  rects.forEach((rect, i) => {
-    setTimeout(() => {
-      rect.style.transform = "translateY(0%)";
-    }, i * 300);
+  // وقتی همه منابع واقعی لود شدند
+  window.addEventListener('load', () => {
+    // درصد تا 100 بره و بعد مستطیل‌ها انیمیشن بگیرند
+    incrementPercent(100, startRectsAnimation);
   });
 
-  // وقتی همه مستطیل‌ها رسیدن بالا → پس‌زمینه سفید رو حذف کن
-  setTimeout(() => {
-    preloader.classList.add("done-bg");
-  }, rects.length * 300 + 500); // اینجا زمانو تنظیم کردم
+  function startRectsAnimation(){
+    brandEl.style.display = "none";
+    percentEl.style.display = "none";
 
-  // بعد از اومدن همه، یکی یکی از بالا برن بیرون
-  setTimeout(() => {
     rects.forEach((rect, i) => {
       setTimeout(() => {
-        rect.style.transform = "translateY(-100%)";
+        rect.style.transform = "translateY(0%)";
       }, i * 300);
     });
 
-    // بعد از پایان انیمیشن کل preloader حذف بشه
     setTimeout(() => {
-      preloader.remove();
-    }, rects.length * 300 + 800);
+      preloader.classList.add("done-bg");
+    }, rects.length * 300 + 500);
 
-  }, rects.length * 300 + 1200);
-}
-})();
-// Preloader hide after page load
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  if (preloader) {
-    preloader.style.opacity = "0";
     setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500); // نیم‌ثانیه برای انیمیشن محو شدن
+      rects.forEach((rect, i) => {
+        setTimeout(() => {
+          rect.style.transform = "translateY(-100%)";
+        }, i * 300);
+      });
+      setTimeout(() => {
+        preloader.remove();
+      }, rects.length * 300 + 800);
+    }, rects.length * 300 + 1200);
   }
-});
+})();
