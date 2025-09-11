@@ -145,7 +145,7 @@ window.addEventListener('load', () => {
     }
   }, 20);
 
-  function startRectsAnimation(){
+function startRectsAnimation(){
   // متن و درصد رو مخفی کن
   brandEl.style.display = "none";
   percentEl.style.display = "none";
@@ -156,6 +156,11 @@ window.addEventListener('load', () => {
       rect.style.transform = "translateY(0%)";
     }, i * 300);
   });
+
+  // وقتی همه مستطیل‌ها رسیدن بالا → پس‌زمینه سفید رو حذف کن
+  setTimeout(() => {
+    preloader.classList.add("done-bg");
+  }, rects.length * 300 + 500); // اینجا زمانو تنظیم کردم
 
   // بعد از اومدن همه، یکی یکی از بالا برن بیرون
   setTimeout(() => {
