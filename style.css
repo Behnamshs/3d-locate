@@ -656,7 +656,7 @@ footer{
   color: #faf9f6;
   text-align: center;
   display: block;
-  margin-top: 1vh;
+  gap: 2vh;
   font-weight: 400;
   font-family: thirdfont;
   transition: .5s ease;
