@@ -160,7 +160,7 @@ header h2{
 .info h5,.info img,.headline input{
   opacity: 0;
   transition: all 0.8s ease;
-  transition-delay: 5000ms;
+  transition-delay: 5500ms;
 }
 .info.show h5,.info.show img{
   opacity: 1;
@@ -227,7 +227,7 @@ header h2{
     margin-top: 20px;
     width: 100%;
     height: 310px;
-    
+    margin-top: 5vh;
 }
 .container1:nth-child(2){
   margin-top: 0px;
@@ -477,8 +477,10 @@ header h2{
   left: 50%;
   display: flex;
   gap: 10px;
+  /*transform: translateX(-50%);*/
+  justify-content: center; /* اضافه شده */
+  align-items: center;    /* اضافه شده */
 }
-
 .sidebar-socials .circle {
   width: 45px;
   height: 45px;
@@ -488,16 +490,24 @@ header h2{
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  cursor: pointer;
+}
+.sidebar-socials .circle:active {
+  background-color: #faf9f6;
 }
 
 .sidebar-socials .circle img {
   width: 22px;
   height: 22px;
-  
 }
-
+.sidebar-socials .circle:active img {
+  filter: invert(1);
+}
+.sidebar-socials .circle:hover img {
+  filter: invert(1);
+}
 .sidebar-socials .circle:hover {
-  background: #ff3b3b; /* رنگ دلخواه هنگام هاور */
+  background: #faf9f6; /* رنگ دلخواه هنگام هاور */
 }
 .menu {
   top: 50vh;
@@ -567,6 +577,92 @@ header h2{
 }
 .menu-item img{
   margin-left: 5px;
+}
+footer{
+  width: 100%;
+  height: 30vh;
+  margin-top: 10vh;
+  background-color: #010a33;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+}
+.etemad{
+  grid-row: 1/9;
+  grid-column: 1/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.etemad button{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid #faf9f6; 
+  background-color: #010a33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.etemad button img{
+  position: relative;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+}
+.social2{
+  grid-row: 9/17;
+  grid-column: 1/5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.social2 button{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #faf9f6; 
+  background-color: #010a33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: .5S ease;
+}
+.social2 button img{
+  position: relative;
+  width: 70%;
+  height: 70%;
+  overflow: hidden;
+}
+.social2 button:active,.social2 button:active{
+  background-color: #faf9f6;
+  border: #010a33;
+}
+.social2 button img:active,.social2 button img:hover{
+  filter: invert(1);
+}
+.links{
+  grid-row: 1/17;
+  grid-column: 5/7;
+}
+.links a{
+  text-decoration: none;
+  color: #faf9f6;
+  text-align: center;
+  display: block;
+  margin-top: 1vh;
+  font-weight: 400;
+  font-family: thirdfont;
+  transition: .5s ease;
+}
+.links a:hover,.links a:active{
+  color: #ddd;
 }
 @media (min-width:630px){
 .headline{
