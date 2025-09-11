@@ -658,6 +658,7 @@ footer{
   text-align: center;
   display: block;
   gap: 2vh;
+  margin-top: 2vh;
   font-weight: 400;
   font-family: thirdfont;
   transition: .5s ease;
