@@ -2,42 +2,35 @@
   padding: 0;
   margin: 0;
 }
-body{
-  background-color: #faf9f6;
+body {
+  margin: 0;
+  padding: 0;
+  background: #faf9f6; /* تست کن اینجا رنگ یا بک سایت اصلیت باشه */
 }
-/* صفحه لودینگ کلی */
+
 .preloader {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
   z-index: 99999;
   flex-direction: column;
-  transition: opacity 0.6s ease;
+  background: #fff; /* اول سفید باشه */
+  transition: background 0.5s ease;
 }
 
-/* متن اسم */
-.preloader .brand {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: #111;
+.preloader.done-bg {
+  background: transparent; /* وقتی مستطیل‌ها شروع میشن → پس‌زمینه حذف بشه */
 }
 
-/* درصد */
-.preloader .percent {
-  font-size: 22px;
-  font-weight: 600;
-  color: #333;
-}
 .preloader .brand,
 .preloader .percent {
-  background: #fff; /* متن روی بک سفید کوچیک باشه */
-  padding: 10px 20px;
-  border-radius: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 8px 0;
 }
+
 .loader-rects {
   position: fixed;
   top: 0;
@@ -51,7 +44,7 @@ body{
 
 .loader-rect {
   flex: 1;
-  background: #1e3a8a; /* هم‌رنگ سمت چپ */
+  background: #1e3a8a; /* رنگ آبی */
   transform: translateY(100%);
   transition: transform 0.6s ease;
 }
@@ -64,11 +57,13 @@ body{
   justify-content: center;
   align-items: center;
   color: #fff;
+  font-family: secondfont;
 }
 .headline{
   width: 100%;
   height: 32.5vh;
   position: relative;
+  font-family: secondfont;
 }
 .headline img{
   position: absolute;
@@ -232,6 +227,7 @@ header h2{
     margin-top: 20px;
     width: 100%;
     height: 310px;
+    
 }
 .container1:nth-child(2){
   margin-top: 0px;
@@ -240,6 +236,7 @@ header h2{
     margin-right: 4vh;
     padding-top: 2.5%;
     direction: rtl;
+    font-family: secondfont;
 }
 .slider{
     user-select:none;
@@ -268,6 +265,7 @@ header h2{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     text-decoration: none;
     color: #111111;
+    
 }
 
 .option1 .img{
@@ -325,15 +323,15 @@ header h2{
   text-align: center;
     direction: rtl;
     margin-right: 5px;
-    margin-top: 5px;
-    
+    margin-top: -1vh;
+    font-family: secondfont;
 }
 .option1 p{
   text-align: center;
     direction: rtl;
     margin-right: 7.5px;
-    margin-top: 5px;
-    
+    margin-top: -1.25vh;
+    font-family: secondfont;
 }
 .option1 h4{
   display: inline-block;
@@ -474,7 +472,7 @@ header h2{
 }
 .sidebar-socials {
   position: absolute;
-  bottom: 20px;
+  bottom: 10vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -587,4 +585,16 @@ header h2{
   flex: 0 0 18%;
   max-height: 375px;   
   }
+}
+@font-face {
+  font-family: firstfont;
+  src: url(font/Digi-Farkhonde-Boldwww.digifonts.ir_/Digi\ Farkhonde\ Bold.otf);
+}
+@font-face {
+  font-family: secondfont;
+  src: url(font/Digi-Shohrehwww.digifonts.ir_/digi\ Shohreh\ bold.otf);
+}
+@font-face {
+  font-family: thirdfont;
+  src: url(font/DigiSarvenaz-Fontchi.com/DigiSarvenaz-Fontchi.com/Digi\ Sarvenaz.otf);
 }
