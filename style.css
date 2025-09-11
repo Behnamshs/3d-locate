@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #faf9f6; /* تست کن اینجا رنگ یا بک سایت اصلیت باشه */
+  background: #d9d3c1; /* تست کن اینجا رنگ یا بک سایت اصلیت باشه */
 }
 
 .preloader {
@@ -93,6 +93,7 @@ header{
   position: relative;
   background-image: linear-gradient(to bottom,#111111,#1a1a1a,#121212,#1c1c1c);
   color: #ffffff;
+  z-index: 9999;
 }
 .profile{
   width: 4vh;
