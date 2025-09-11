@@ -178,3 +178,6 @@ function startRectsAnimation(){
   }, rects.length * 300 + 1200);
 }
 })();
+  window.addEventListener("load", function() {
+    document.getElementById("preloader").style.display = "none";
+  });
