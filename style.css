@@ -263,7 +263,7 @@ header h2{
     border-radius: 1rem;
     scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
     overflow: hidden;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     text-decoration: none;
     color: #111111;
     
