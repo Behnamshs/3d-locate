@@ -137,13 +137,23 @@ window.addEventListener('load', () => {
 
   let pct = 0;
   const interval = setInterval(() => {
-    pct++;
-    percentEl.textContent = pct + "%";
-    if(pct >= 100){
-      clearInterval(interval);
-      startRectsAnimation();
-    }
-  }, 20);
+  pct++;
+  percentEl.textContent = pct + "%";
+  if(pct >= 100){
+    clearInterval(interval);
+
+    // بررسی مدت زمان واقعی لود
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(minLoadTime - elapsed, 0);
+
+    setTimeout(() => {
+      startRectsAnimation(); // بعد از رسیدن حداقل زمان، انیمیشن مستطیل‌ها شروع میشه
+    }, remaining);
+  }
+}, 20);
+  
+const minLoadTime = 2000; // حداقل 2 ثانیه لودینگ
+const startTime = Date.now();
 
 function startRectsAnimation(){
   // متن و درصد رو مخفی کن
@@ -178,6 +188,13 @@ function startRectsAnimation(){
   }, rects.length * 300 + 1200);
 }
 })();
-  window.addEventListener("load", function() {
-    document.getElementById("preloader").style.display = "none";
-  });
+// Preloader hide after page load
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 500); // نیم‌ثانیه برای انیمیشن محو شدن
+  }
+});
