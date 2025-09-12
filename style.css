@@ -148,7 +148,7 @@ header h2{
   bottom: 7.5px;
 }
 .headline input{
-  position: absolute;
+  position: relative;
   height: 5.5vh;
   width: 60%;
   border-radius: 8px;
