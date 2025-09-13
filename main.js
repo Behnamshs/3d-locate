@@ -94,13 +94,15 @@ window.addEventListener('load', () => {
   }, 800);
 });
 // accordion
-const accordions = document.querySelectorAll('.accordion-title');
-accordions.forEach(title => {
+document.querySelectorAll('.accordion-title').forEach(title => {
   title.addEventListener('click', () => {
-    const parent = title.parentElement;
-    parent.classList.toggle('active');
+    const parent = title.closest('.accordion');
+    if (parent) {
+      parent.classList.toggle('active');
+    }
   });
 });
+
 const statusScroll = document.querySelector('.status-scroll');
 let isDown2 = false;
 let startX2;
