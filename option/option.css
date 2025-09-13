@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+  position: fixed;
+  width: 100%;
+  height: 7vh;
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom,#111111,#1a1a1a,#121212,#1c1c1c);
+  color: #ffffff;
+  z-index: 9999;
+}
+.profile{
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  margin-top: 1vh;
+  border: none;
+  display: inline-block;
+  position: relative;
+  filter: invert(1);
+}
+
+header h2{
+  position: absolute;
+  display: inline-block;
+  top: 2vh;
+  left: 4.5vh;
+  font-size: medium;
+}
+.btn3{
+  background-color: transparent;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  position: absolute;
+  right: .5vh;
+  margin-top: 1vh;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  font-size: x-large;
+  color: #ffffff;
+}
+.shot{
+    width: 100%;
+    height: 30dvh;
+    background-color: red;
+}
+.action{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid black;
+}
+.item{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid black;
+}
+.item i{
+    position: relative;
+    color: #111111;
+    z-index: 9999;
+    font-size: large;
+}
+.tozihat{
+    width: 100%;
+    height: 55dvh;
+    background-color: blue;
+}
+.container1{
+    margin-top: 20px;
+    width: 100%;
+    height: 30dvh;
+    margin-top: 5vh;
+}
+.container1:nth-child(2){
+  margin-top: 0px;
+}
+.slider{
+    user-select:none;
+    cursor: grab;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+.slider::-webkit-scrollbar {
+    display: none;
+  }
+  .slider:active{
+    cursor: grabbing;
+  }
+.option1{
+    height: 230px;
+    flex: 0 0 55%; /* هر کارت 85٪ عرض صفحه باشه */
+    background: white;
+    border-radius: 1rem;
+    scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    text-decoration: none;
+    color: #000000;
+    
+}
+
+.option1 .img{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 100%;
+    height: 70%;
+    cursor: auto;
+    overlay: blur(10px);
+    position: relative;
+}
+.img .ax{
+ height:100%;
+ width:100%;
+ z-index:1;
+ position:absolute; }
+.fuck{ 
+  overflow: hidden;
+  width:100%;
+  height:100%;
+  z-index:3;
+  position:absolute;
+}
+.overlay{ 
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter:blur(6px);
+  z-index:2;
+}
+.option1 h2{
+  text-align: center;
+    direction: rtl;
+    margin-right: 5px;
+    margin-top: 1vh;
+    font-family: secondfont;
+}
+.option1 p{
+  text-align: center;
+    direction: rtl;
+    margin-right: 7.5px;
+    margin-top: 1vh;
+    font-family: secondfont;
+}
+.option1 h4{
+  display: inline-block;
+}
+.option1 i{
+  font-size: 18px;
+  margin-left: 5%;
+  margin-top: 4vh;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column; /* بچین همه آیتم‌ها به صورت ستونی */
+  justify-content: flex-start; /* آیتم‌ها از بالا شروع بشن */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: #faf9f6;
+  backdrop-filter: blur(10px);
+  z-index: 1232342499;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: none;
+  direction: rtl;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.4);
+  isolation: isolate;
+}
+
+/* وقتی منو بازه، بدنه قفل میشه */
+.body-locked {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sidebar h3{
+  display: inline-block;
+  color:#010a33;
+}
+.sidebar .close-btn{
+  font-size: xx-large;
+  color: #010a33;  
+  position: absolute;
+  top: 2vh;
+}
+.sidebar .logo{
+  width: 60%;
+  display: block;
+  margin-right: 20%;
+}
+.sidebar li{
+  list-style-type: none;
+  width: 100%;
+  height: 7vh;
+}
+.sidebar li:nth-child(1){
+  border-top: #010a33 2px solid;
+  height: 7vh;
+}
+.sidebar a{
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #010a33;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  color: white;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.btn1{
+    width: 5vh;
+    height: 5vh;
+    background-color: #faf9f6;
+    position: absolute;
+    left: 4vh;
+    top: 14px;
+    border-radius: 50%;
+    margin-left: 1.75%;
+    border: .1px solid black;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    border: none;
+}
+.accordion-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #010a33;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f1f1f1;
+  text-align: center;
+  display: block;
+}
+
+.accordion-content li {
+  text-align: center;
+  display: block;
+}
+
+.accordion-content li a {
+  color: #010a33;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+}
+
+.accordion.active .accordion-content {
+  max-height: 300px;
+}
+.sidebar-socials {
+  margin-top: auto;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  /*transform: translateX(-50%);*/
+  justify-content: center;
+  align-items: center; 
+}
+.sidebar-socials .circle {
+  width: 45px;
+  height: 45px;
+  background: #010a33;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.sidebar-socials .circle:active {
+  background-color: #faf9f6;
+}
+
+.sidebar-socials .circle img {
+  width: 22px;
+  height: 22px;
+}
+.sidebar-socials .circle:active img {
+  filter: invert(1);
+}
+.sidebar-socials .circle:hover img {
+  filter: invert(1);
+}
+.sidebar-socials .circle:hover {
+  background: #faf9f6; /* رنگ دلخواه هنگام هاور */
+}
