@@ -6,6 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="option.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css"/>
+    <script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 </head>
 <body>
     <header>
@@ -13,13 +16,53 @@
       <h2>بهنام</h2>
       <button class="btn3">≡</button>
     </header>
-    <div class="shot"></div>
+    <div class="shot">
+      <div id="panorama" style="width:100%; height:100%;"></div>
+    </div>
     <div class="action">
         <div class="item"><i class="fa fa-share-alt" onclick=""></i></div>
         <div class="item"><i class="fa fa-heart-o" onclick=""></i></div>
         <div class="item"><i class="fa fa-commenting-o" onclick=""></i></div>
     </div>
-    <div class="tozihat"></div>
+<div class="tozihat">
+  <!-- بخش کامنت‌ها بالای توضیحات -->
+  <div class="comments">
+    <div class="comment-list">
+      <div class="comment">
+        <strong class="username">علی</strong>
+        <p class="comment-text">قهوه اینجا فوق‌العاده‌ست</p>
+      </div>
+      <div class="comment">
+        <strong class="username">مینا</strong>
+        <p class="comment-text">فضای کافه خیلی راحت و دلنشینه</p>
+      </div>
+      <div class="comment">
+        <strong class="username">سام</strong>
+        <p class="comment-text">دسرهاش رو توصیه می‌کنم</p>
+      </div>
+    </div>
+    <button class="load-more-comments">کامنت‌های بیشتر</button>
+  </div>
+
+  <p class="description">
+    کافه فلان یک مکان دلنشین برای تجربه قهوه‌های خاص و دسرهای خوشمزه است. فضای داخلی با طراحی مدرن و دکوراسیون جذاب، حس آرامش و راحتی را به شما منتقل می‌کند. این کافه با ارائه انواع نوشیدنی‌های گرم و سرد، فضایی دوستانه برای ملاقات با دوستان یا کار کردن در محیطی آرام فراهم کرده است. علاوه بر قهوه، دسرهای مخصوص و میان‌وعده‌های خوشمزه نیز در منوی کافه موجود است.
+  </p>
+  <div class="tozihat">
+  <!-- نقشه گوگل -->
+  <div class="map-container">
+  <iframe 
+    src="https://www.google.com/maps?q=36.5634,53.0790&hl=fa&z=15&output=embed" 
+    width="100%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+</div>
+</div>
+
+</div>
+</div>
     <div class="container1" id="container1">
 <div class="slider">
 <!-- کارت نمونه با overlay و actions -->
@@ -153,6 +196,6 @@
   <a href="#" class="circle"><img src="../icons/icons8-phone-96.png" alt="Phone"></a>
 </div>
 </div>
-<script src="../main.js"></script>
+<script src="option.js"></script>
 </body>
 </html>
