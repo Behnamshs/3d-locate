@@ -50,6 +50,22 @@ header h2{
     height: 30dvh;
     background-color: red;
 }
+.pnml-share {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background-color: #ffffff;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/929/929610.png'); /* آیکون شیر */
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 9999;
+}
 .action{
     width: 100%;
     height: 8vh;
@@ -67,6 +83,10 @@ header h2{
     align-items: center;
     position: relative;
     border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.item:active{
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 .item i{
     position: relative;
@@ -75,9 +95,68 @@ header h2{
     font-size: large;
 }
 .tozihat{
-    width: 100%;
-    height: 55dvh;
-    background-color: blue;
+  text-align: center;
+  margin-top: 5px;
+  padding: 0;
+}
+.map-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.comments {
+  max-height: 0;
+  overflow: hidden;
+  
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0rem;
+  text-align: right;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.comments.open {
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  max-height: 500px;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+}
+
+.comment {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.username {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.comment-text {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.load-more-comments {
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  text-decoration: underline #333;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 5px;
 }
 .container1{
     margin-top: 20px;
@@ -152,14 +231,14 @@ header h2{
   text-align: center;
     direction: rtl;
     margin-right: 5px;
-    margin-top: 1vh;
+    margin-top: .5vh;
     font-family: secondfont;
 }
 .option1 p{
   text-align: center;
     direction: rtl;
     margin-right: 7.5px;
-    margin-top: 1vh;
+    margin-top: .5vh;
     font-family: secondfont;
 }
 .option1 h4{
