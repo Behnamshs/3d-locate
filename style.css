@@ -127,6 +127,11 @@ header h2{
   font-size: x-large;
   color: #ffffff;
 }
+.info, 
+.headline input {
+  position: relative;
+  z-index: 2;
+}
 .info{
   width: 90%;
   height: 15vh;
@@ -157,6 +162,29 @@ header h2{
   padding-right: 5px;
   bottom: 10px;
   transform: translateY(30px);
+}
+.search-icon{
+  z-index: 9999;
+  position: absolute;
+  bottom: 2vh;
+  left: 21%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  transition-delay: 5500ms;
+  background: #010a33;
+  width: 4.5vh;
+  height: 4.5vh;
+  border-radius: 50%;
+  color: #faf9f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline.show .search-icon{
+  opacity: 1;
+  transform: translateY(0);
 }
 .info h5,.info img,.headline input{
   opacity: 0;
@@ -298,26 +326,6 @@ header h2{
   height:100%;
   backdrop-filter:blur(6px);
   z-index:2;
-}
-.actions{ 
-  position:absolute; 
-  left:5px; 
-  top:30px; 
-  display:flex; 
-  flex-direction:column; 
-  gap:12px; 
-  z-index:4; 
-  color:#faf9f6; 
-  font-size:18px; 
-  text-align:center; 
-}
-.action-item{
-  margin-top: -25px;
-}
-.action-item span{ 
-  display:block;
-  font-size:12px;
-  margin-top:3px;
 }
 .option1 h2{
   text-align: center;
