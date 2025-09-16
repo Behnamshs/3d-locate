@@ -179,3 +179,31 @@ window.addEventListener('load', () => {
     }, rects.length * 300 + 1200);
   }
 })();
+
+
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+
+function doSearch() {
+  const term = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll(".option1");
+
+  cards.forEach(card => {
+    const title = card.querySelector("h2").innerText.toLowerCase();
+    const desc = card.querySelector("p").innerText.toLowerCase();
+
+    if (title.includes(term) || desc.includes(term)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+searchBtn.addEventListener("click", doSearch);
+
+searchInput.addEventListener("keyup", e => {
+  if (e.key === "Enter") {
+    doSearch();
+  }
+});
