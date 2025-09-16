@@ -1,0 +1,489 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+  position: fixed;
+  width: 100%;
+  height: 7vh;
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom,#111111,#1a1a1a,#121212,#1c1c1c);
+  color: #ffffff;
+  z-index: 9999;
+}
+.back{
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  margin-top: 2vh;
+  border: none;
+  display: inline-block;
+  position: relative;
+  filter: invert(1);
+}
+
+header h2{
+  position: absolute;
+  display: inline-block;
+  top: 2vh;
+  left: 4.5vh;
+  font-size: medium;
+}
+.btn3{
+  background-color: transparent;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  position: absolute;
+  right: .5vh;
+  margin-top: 1vh;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  font-size: x-large;
+  color: #ffffff;
+}
+.shot{
+    width: 100%;
+    height: 30dvh;
+    background-color: red;
+}
+.pnml-share {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+  background-color: #ffffff;
+  background-image: url('../icons/icons8-copy-96.png'); /* آیکون شیر */
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+.action{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid black;
+}
+.item{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.item:active{
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.item i{
+    position: relative;
+    color: #111111;
+    z-index: 9999;
+    font-size: large;
+}
+.tozihat{
+  text-align: center;
+  margin-top: 5px;
+  padding: 0;
+}
+.share-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  border-radius: 8px;
+  
+  text-align: center;
+  transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+}
+
+.share-panel.open {
+  max-height: 150px; /* ارتفاع دلخواه بر اساس تعداد دکمه‌ها */
+  opacity: 1;
+}
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-buttons .circle {
+  width: 5vh;
+  height: 5vh;
+  background: #010a33;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.share-buttons .circle:hover {
+  background: #faf9f6;
+}
+
+.share-buttons .circle img {
+  width: 22px;
+  height: 22px;
+  transition: 0.3s;
+}
+
+.share-buttons .circle:hover img {
+  filter: invert(1);
+}
+
+.map-container {
+  width: 99%;
+  height: 300px;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: #000000 2.5px solid;
+}
+.action .item {
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action .item i {
+  font-size: large;
+  color: #111111;
+}
+
+/* وقتی لایک فعال شد */
+.action .item.heart-active {
+  background-color: red; /* کل باکس قرمز */
+}
+
+.action .item.heart-active i {
+  color: #fff; /* آیکون سفید */
+}
+.comments {
+  max-height: 0;
+  overflow: hidden;
+  
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0rem;
+  text-align: right;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.comments.open {
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  max-height: 500px;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  padding: 0.5rem;
+}
+
+.comment {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.username {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.comment-text {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.load-more-comments {
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  text-decoration: underline #333;
+  font-weight: 400;
+  font-size: medium;
+  border-radius: 5px;
+}
+.container1{
+    margin-top: 20px;
+    width: 100%;
+    height: 310px;
+    margin-top: 5vh;
+}
+.container1 h1{
+    margin-right: 4vh;
+    padding-top: 2.5%;
+    direction: rtl;
+    font-family: secondfont;
+}
+.slider{
+    user-select:none;
+    cursor: grab;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+.slider::-webkit-scrollbar {
+    display: none;
+  }
+  .slider:active{
+    cursor: grabbing;
+  }
+.option1{
+    height: 230px;
+    flex: 0 0 55%; /* هر کارت 85٪ عرض صفحه باشه */
+    background: white;
+    border-radius: 1rem;
+    scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    text-decoration: none;
+    color: #000000;
+    
+}
+
+.option1 .img{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 100%;
+    height: 70%;
+    cursor: auto;
+    overlay: blur(10px);
+    position: relative;
+}
+.img .ax{
+ height:100%;
+ width:100%;
+ z-index:1;
+ position:absolute; }
+.fuck{ 
+  overflow: hidden;
+  width:100%;
+  height:100%;
+  z-index:3;
+  position:absolute;
+}
+.overlay{ 
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  backdrop-filter:blur(6px);
+  z-index:2;
+}
+.option1 h2{
+  text-align: center;
+    direction: rtl;
+    margin-right: 5px;
+    margin-top: .125vh;
+    font-family: secondfont;
+}
+.option1 p{
+  text-align: center;
+    direction: rtl;
+    margin-right: 7.5px;
+    margin-top: .125vh;
+    font-family: secondfont;
+}
+.option1 h4{
+  display: inline-block;
+}
+.option1 i{
+  font-size: 18px;
+  margin-left: 5%;
+  margin-top: 4vh;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column; /* بچین همه آیتم‌ها به صورت ستونی */
+  justify-content: flex-start; /* آیتم‌ها از بالا شروع بشن */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: #faf9f6;
+  backdrop-filter: blur(10px);
+  z-index: 1232342499;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: none;
+  direction: rtl;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.4);
+  isolation: isolate;
+}
+
+/* وقتی منو بازه، بدنه قفل میشه */
+.body-locked {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.sidebar.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sidebar h3{
+  display: inline-block;
+  color:#010a33;
+}
+.sidebar .close-btn{
+  font-size: xx-large;
+  color: #010a33;  
+  position: absolute;
+  top: 2vh;
+}
+.sidebar .logo{
+  width: 60%;
+  display: block;
+  margin-right: 20%;
+}
+.sidebar li{
+  list-style-type: none;
+  width: 100%;
+  height: 7vh;
+}
+.sidebar li:nth-child(1){
+  border-top: #010a33 2px solid;
+  height: 7vh;
+}
+.sidebar a{
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #010a33;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+.sidebar a:hover {
+  color: white;
+}
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.btn1{
+    width: 5vh;
+    height: 5vh;
+    background-color: #faf9f6;
+    position: absolute;
+    left: 4vh;
+    top: 14px;
+    border-radius: 50%;
+    margin-left: 1.75%;
+    border: .1px solid black;
+    backdrop-filter: blur(10px);
+    display: inline-block;
+    border: none;
+}
+.accordion-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #010a33;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f1f1f1;
+  text-align: center;
+  display: block;
+}
+
+.accordion-content li {
+  text-align: center;
+  display: block;
+}
+
+.accordion-content li a {
+  color: #010a33;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+}
+
+.accordion.active .accordion-content {
+  max-height: 300px;
+}
+.sidebar-socials {
+  margin-top: auto;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  /*transform: translateX(-50%);*/
+  justify-content: center;
+  align-items: center; 
+}
+.sidebar-socials .circle {
+  width: 45px;
+  height: 45px;
+  background: #010a33;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.sidebar-socials .circle:active {
+  background-color: #faf9f6;
+}
+
+.sidebar-socials .circle img {
+  width: 22px;
+  height: 22px;
+}
+.sidebar-socials .circle:active img {
+  filter: invert(1);
+}
+.sidebar-socials .circle:hover img {
+  filter: invert(1);
+}
+.sidebar-socials .circle:hover {
+  background: #faf9f6; /* رنگ دلخواه هنگام هاور */
+}
