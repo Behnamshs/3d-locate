@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ثبت نام سه مرحله‌ای</title>
+<style>
+body {
+  font-family: sans-serif;
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.step-label {
+  font-size: 0.8rem;
+  color: #888;
+  float: right;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 0.6rem;
+  background: #010a33;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover, button:active {
+  background: #010a33;
+  box-shadow: rgb(0, 0, 0, 0.5) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #010a33;
+  font-size: 0.85rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.code-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.code-inputs input {
+  width: 20%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- مرحله اول -->
+  <div class="step step1 active">
+    <h2>ثبت نام</h2>
+    <span class="step-label">شماره تماس</span>
+    <input type="text" id="phone" placeholder="شماره تماس" required>
+    <span class="step-label">رمز عبور</span>
+    <input type="password" id="password" placeholder="رمز عبور" required>
+    <span class="step-label">تایید رمز عبور</span>
+    <input type="password" id="confirm-password" placeholder="تایید رمز عبور" required>
+    <a href="#" id="existing-account">در حال حاضر حساب کاربری دارید؟</a>
+    <button id="next1">مرحله بعد</button>
+  </div>
+
+  <!-- فرم ورود (حساب موجود) -->
+  <div class="step step-login">
+    <h2>ورود</h2>
+    <span class="step-label"> شماره تماس</span>
+    <input type="text" id="login-phone" placeholder="شماره تماس" required>
+    <span class="step-label"> رمز عبور</span>
+    <input type="password" id="login-password" placeholder="رمز عبور" required>
+    <button id="login-btn">ورود</button>
+    <a href="#" id="back-to-register">ثبت نام</a>
+  </div>
+
+  <!-- مرحله دوم -->
+  <div class="step step2">
+    <h2>ثبت کد تایید</h2>
+    <p>کد ۴ رقمی را وارد کنید:</p>
+    <div class="code-inputs">
+      <input type="text" maxlength="1" class="code" required>
+      <input type="text" maxlength="1" class="code" required>
+      <input type="text" maxlength="1" class="code" required>
+      <input type="text" maxlength="1" class="code" required>
+    </div>
+    <button id="next2">مرحله بعد</button>
+  </div>
+
+  <!-- مرحله سوم -->
+  <div class="step step3">
+    <h2>اطلاعات تکمیلی</h2>
+    <span class="step-label"> نام</span>
+    <input type="text" id="first-name" placeholder="نام" required>
+    <span class="step-label"> نام خانوادگی</span>
+    <input type="text" id="last-name" placeholder="نام خانوادگی" required>
+    <span class="step-label"> نام کاربری</span>
+    <input type="text" id="username" placeholder="نام کاربری" required>
+    <span class="step-label"> ایمیل (اختیاری)</span>
+    <input type="email" id="email" placeholder="ایمیل">
+    <button id="finish">ثبت نام</button>
+  </div>
+
+</div>
+
+<script>
+const step1 = document.querySelector(".step1");
+const step2 = document.querySelector(".step2");
+const step3 = document.querySelector(".step3");
+const stepLogin = document.querySelector(".step-login");
+
+document.getElementById("next1").addEventListener("click", () => {
+  // بررسی پسورد و تایید
+  const pass = document.getElementById("password").value;
+  const confirm = document.getElementById("confirm-password").value;
+  if(pass === "" || confirm === "" || document.getElementById("phone").value==="") {
+    alert("تمام فیلدها را پر کنید");
+    return;
+  }
+  if(pass !== confirm) {
+    alert("رمز عبور و تایید آن یکسان نیست");
+    return;
+  }
+  step1.classList.remove("active");
+  step2.classList.add("active");
+});
+
+// کد مرحله ۲
+const codeInputs = document.querySelectorAll(".step2 .code");
+codeInputs.forEach((input, index) => {
+  input.addEventListener("input", () => {
+    if(input.value.length === 1 && index < codeInputs.length-1){
+      codeInputs[index+1].focus();
+    }
+  });
+});
+
+document.getElementById("next2").addEventListener("click", () => {
+  const code = Array.from(codeInputs).map(i => i.value).join("");
+  if(code === "1111") {
+    step2.classList.remove("active");
+    step3.classList.add("active");
+  } else {
+    alert("کد اشتباه است");
+  }
+});
+
+// حساب موجود
+document.getElementById("existing-account").addEventListener("click", () => {
+  step1.classList.remove("active");
+  stepLogin.classList.add("active");
+});
+
+// بازگشت از ورود به ثبت نام
+document.getElementById("back-to-register").addEventListener("click", () => {
+  stepLogin.classList.remove("active");
+  step1.classList.add("active");
+});
+
+// اتمام ثبت نام
+document.getElementById("finish").addEventListener("click", () => {
+  alert("ثبت نام شما انجام شد!");
+});
+</script>
+
+</body>
+</html>
