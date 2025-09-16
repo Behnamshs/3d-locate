@@ -180,6 +180,7 @@ header h2{
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .headline.show .search-icon{
@@ -699,3 +700,4 @@ footer{
   font-family: thirdfont;
   src: url(font/DigiSarvenaz-Fontchi.com/DigiSarvenaz-Fontchi.com/Digi\ Sarvenaz.otf);
 }
+
