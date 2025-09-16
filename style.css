@@ -166,7 +166,7 @@ header h2{
 .search-icon{
   z-index: 9999;
   position: absolute;
-  bottom: 2vh;
+  bottom: 1.875vh;
   left: 21%;
   opacity: 0;
   transform: translateY(30px);
@@ -700,4 +700,3 @@ footer{
   font-family: thirdfont;
   src: url(font/DigiSarvenaz-Fontchi.com/DigiSarvenaz-Fontchi.com/Digi\ Sarvenaz.otf);
 }
-
