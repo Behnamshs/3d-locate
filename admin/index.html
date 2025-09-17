@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>پنل ادمین — داشبورد</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="باز/بسته کردن منو">☰</button>
+      <div class="brand">پنل ادمین</div>
+      <div class="top-actions">
+        <button class="icon-btn">🔔</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="logo">لوگو</div>
+        <nav class="menu">
+          <a href="index.html" class="menu-item active">داشبورد</a>
+          <a href="add-business.html" class="menu-item">افزودن کسب‌وکار</a>
+          <a href="user-dashboard.html" class="menu-item">کاربران و تعاملات</a>
+          <a href="delete-dashboard.html" class="menu-item">حذف‌ها</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <h1>خوش آمدید</h1>
+        <p>اینجا مدیریت کسب‌وکارها، کاربران و تعاملات را انجام دهید.</p>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <div class="card-title">کسب‌وکارهای فعال</div>
+          <div class="card-value">۱۲۴</div>
+        </div>
+        <div class="card">
+          <div class="card-title">کاربران ثبت‌شده</div>
+          <div class="card-value">۳۸۰</div>
+        </div>
+        <div class="card">
+          <div class="card-title">کامنت‌های جدید</div>
+          <div class="card-value">۲۱</div>
+        </div>
+      </section>
+
+      <section class="recent box">
+        <h2>آخرین کسب‌وکارهای ثبت‌شده</h2>
+        <div class="list">
+          <article class="item">
+            <img src="../img/cafe1.jpg" alt="کافه" />
+            <div class="meta">
+              <div class="title">کافه لاله‌زار</div>
+              <div class="sub">کافه — تهران</div>
+            </div>
+            <div class="stats">
+              <div>بازدید: ۱۵۲</div>
+              <div>لایک: ۴۷</div>
+            </div>
+          </article>
+          <article class="item">
+            <img src="../img/resturant1.jpg" alt="رستوران" />
+            <div class="meta">
+              <div class="title">رستوران نیاوران</div>
+              <div class="sub">رستوران — تهران</div>
+            </div>
+            <div class="stats">
+              <div>بازدید: ۸۹</div>
+              <div>لایک: ۲۳</div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

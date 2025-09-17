@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>حذف‌ها</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button class="burger" id="burger4" aria-label="باز/بسته کردن منو">☰</button>
+      <div class="brand">پنل ادمین</div>
+    </header>
+
+    <aside class="sidebar" id="sidebar4">
+      <div class="sidebar-inner">
+        <div class="logo">لوگو</div>
+        <nav class="menu">
+          <a href="index.html" class="menu-item">داشبورد</a>
+          <a href="add-business.html" class="menu-item">افزودن کسب‌وکار</a>
+          <a href="user-dashboard.html" class="menu-item">کاربران و تعاملات</a>
+          <a href="delete-dashboard.html" class="menu-item active">حذف‌ها</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="main content-form">
+      <h1>حذف‌ها</h1>
+
+      <section class="box">
+        <h3>حذف کامنت‌ها</h3>
+        <div class="table-wrap">
+          <table class="table deletable">
+            <thead><tr><th>کاربر</th><th>کامنت</th><th>عملیات</th></tr></thead>
+            <tbody>
+              <tr><td data-label="کاربر">علی</td><td data-label="کامنت">خیلی خوب بود</td><td data-label="عملیات"><button class="btn danger delete-btn">🗑️ حذف</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="box">
+        <h3>حذف کسب‌وکار</h3>
+        <div class="table-wrap">
+          <table class="table deletable">
+            <thead><tr><th>نام</th><th>دسته</th><th>عملیات</th></tr></thead>
+            <tbody>
+              <tr><td data-label="نام">کافه نمونه</td><td data-label="دسته">کافه</td><td data-label="عملیات"><button class="btn danger delete-btn">🗑️ حذف</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="box">
+        <h3>حذف لایک‌ها</h3>
+        <div class="table-wrap">
+          <table class="table deletable">
+            <thead><tr><th>کاربر</th><th>کسب‌وکار</th><th>عملیات</th></tr></thead>
+            <tbody>
+              <tr><td data-label="کاربر">محمد</td><td data-label="کسب‌وکار">رستوران تست</td><td data-label="عملیات"><button class="btn danger delete-btn">🗑️ حذف</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="box">
+        <h3>حذف بازدیدها</h3>
+        <div class="table-wrap">
+          <table class="table deletable">
+            <thead><tr><th>کاربر</th><th>کسب‌وکار</th><th>عملیات</th></tr></thead>
+            <tbody>
+              <tr><td data-label="کاربر">سارا</td><td data-label="کسب‌وکار">کافه لاله‌زار</td><td data-label="عملیات"><button class="btn danger delete-btn">🗑️ حذف</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>افزودن کسب‌وکار</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button class="burger" id="burger2" aria-label="باز/بسته کردن منو">☰</button>
+      <div class="brand">پنل ادمین</div>
+    </header>
+
+    <aside class="sidebar" id="sidebar2">
+      <div class="sidebar-inner">
+        <div class="logo">لوگو</div>
+        <nav class="menu">
+          <a href="index.html" class="menu-item">داشبورد</a>
+          <a href="add-business.html" class="menu-item active">افزودن کسب‌وکار</a>
+          <a href="user-dashboard.html" class="menu-item">کاربران و تعاملات</a>
+          <a href="delete-dashboard.html" class="menu-item">حذف‌ها</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="main content-form">
+      <h1>افزودن کسب‌وکار جدید</h1>
+      <form id="businessForm" class="form-card" novalidate>
+        <label>دسته‌بندی
+          <select id="category" name="category" required>
+            <option value="">انتخاب کنید</option>
+            <option value="cafe">کافه</option>
+            <option value="restaurant">رستوران</option>
+          </select>
+        </label>
+
+        <label>عکس اصلی (۱×۱)
+          <input type="file" id="mainImage" name="mainImage" accept="image/*" required>
+          <div class="error" id="mainImageError"></div>
+          <img id="mainImagePreview" class="preview" alt="پیش‌نمایش">
+        </label>
+
+        <label>لوگو (۱×۱)
+          <input type="file" id="logo" name="logo" accept="image/*" required>
+          <div class="error" id="logoError"></div>
+          <img id="logoPreview" class="preview" alt="پیش‌نمایش لوگو">
+        </label>
+
+        <label>نام کسب‌وکار
+          <input type="text" id="businessName" name="businessName" required>
+        </label>
+
+        <label>آدرس
+          <textarea id="address" name="address" rows="2" required></textarea>
+        </label>
+
+        <div class="threeD-section">
+          <h3>بخش سه‌بعدی (شات)</h3>
+          <div class="placeholder">جایگاه سه‌بعدی</div>
+        </div>
+
+        <label>توضیحات
+          <textarea id="description" name="description" rows="4" required></textarea>
+          <div class="desc-info"><span id="descCounter">0</span> / 85 کلمه</div>
+        </label>
+
+        <label>لوکیشن (انتخاب روی نقشه)
+          <div id="map" class="map"></div>
+          <input type="hidden" id="location" name="location" required>
+          <div class="error" id="mapError"></div>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">ثبت کسب‌وکار</button>
+          <button type="reset" class="btn">پاک کردن</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
