@@ -99,16 +99,17 @@ header{
   width: 4vh;
   height: 4vh;
   border-radius: 50%;
-  margin-top: 1vh;
+  margin-top: 1.25vh;
   border: none;
   display: inline-block;
   position: relative;
+  filter: invert(1);
 }
 
 header h2{
   position: absolute;
   display: inline-block;
-  top: 2vh;
+  top: 1.25vh;
   left: 4.5vh;
   font-size: medium;
 }
@@ -151,6 +152,7 @@ header h2{
 .info img{
   position: absolute;
   bottom: 7.5px;
+  max-width: 20px;
 }
 .headline input{
   position: absolute;
@@ -287,7 +289,7 @@ header h2{
   }
 .option1{
     height: 230px;
-    flex: 0 0 55%; /* هر کارت 85٪ عرض صفحه باشه */
+    flex: 0 0 55%; /* هر کارت 55٪ عرض صفحه باشه */
     background: white;
     border-radius: 1rem;
     scroll-snap-align: center; /* کارت وسط صفحه قرار بگیره */
@@ -672,21 +674,38 @@ footer{
   color: #ddd;
 }
 @media (min-width:630px){
-.headline{
-  height: 50vh;
-}
 .slider{
        scroll-snap-type: none;
   }
 .slider::-webkit-scrollbar {
   display: block;
 }
-.container1{
-  height: 450px;
-}
 .option1{
-  flex: 0 0 18%;
+  flex: 0 0 35%;
   max-height: 375px;   
+  }
+}
+@media (min-width:730px){
+  .option1{
+  flex: 0 0 30%;
+  }
+}
+@media (min-width:830px){
+  .option1{
+  flex: 0 0 25%;
+  }
+  .sidebar{
+    width: 25%;
+  }
+}
+@media (min-width:930px){
+  .option1{
+  flex: 0 0 20%;
+  }
+}
+@media (min-width:1030px){
+  .option1{
+  flex: 0 0 15%;
   }
 }
 @font-face {
