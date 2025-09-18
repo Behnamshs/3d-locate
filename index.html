@@ -1,283 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>roomnama</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>پنل ادمین — داشبورد</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rakkas&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-
-<div class="preloader" id="preloader">
-  <div class="brand">Roomnama</div>
-  <div class="percent" id="percent">0%</div>
-  <div class="loader-rects">
-    <div class="loader-rect"></div>
-    <div class="loader-rect"></div>
-    <div class="loader-rect"></div>
-    <div class="loader-rect"></div>
-  </div>
-</div>
-
-  <div class="event">
-    <marquee behavior="" direction="">تخفیف 50 درصدی در کافه فلان</marquee>
-  </div>
-  <div class="headline">
-    <img src="img/vecteezy_sunset_illuminates_famous_city_skyline_a_romantic_view.jpg" width="100%" height="100%">
-    <div class="bg-blur"></div>
-    <header>
-      <img src="icons/icons8-person-96.png" class="profile">
-      <h2>بهنام</h2>
-      <button class="btn3">≡</button>
+  <div class="app">
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="باز/بسته کردن منو">☰</button>
+      <div class="brand">پنل ادمین</div>
+      <div class="top-actions">
+        <button class="icon-btn">🔔</button>
+        <button class="icon-btn">⚙️</button>
+      </div>
     </header>
-    <div class="info">
-      <h5>توضیحات کوتاهی اینجا قرار میگیرد</h5>
-      <img src="icons/icons8-360-96.png" width="10%">
-    </div>
-    <input type="search" id="searchInput" placeholder="جستجو...">
-    <button class="search-icon" id="searchBtn"><i class="fa fa-search"></i></button>
-  </div>
-  <div class="status">
-  <div class="status-scroll">
-    <div class="story"><img src="cafe/4.jpg" alt=""></div>
-    <div class="story"><img src="cafe/1.webp" alt=""></div>
-    <div class="story"><img src="cafe/2.jpg" alt=""></div>
-    <div class="story"><img src="cafe/3.png" alt=""></div>
-    <div class="story"><img src="cafe/1.webp" alt=""></div>
-    <div class="story"><img src="cafe/4.jpg" alt=""></div>
-  </div>
-</div>
-<div class="container1" id="container1">
-<h1>کافه</h1>
-<div class="slider">
-<!-- کارت نمونه با overlay و actions -->
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe7.jpg" width="100%">
-<img src="cafe/1.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe5.jpg" width="100%">
-<img src="cafe/64532879.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe6.jpg" width="100%">
-<img src="cafe/3234523.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe4.jpg" width="100%">
-<img src="cafe/4.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe3.jpg" width="100%">
-<img src="cafe/1.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe1.jpg" width="100%">
-<img src="cafe/64532879.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/cafe2.jpg" width="100%">
-<img src="cafe/3234523.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>کافه فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-</div>
-</div>
 
-<div class="container1" id="container1">
-<h1>رستوران</h1>
-<div class="slider">
-<!-- کارت نمونه با overlay و actions -->
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant1.jpg" width="100%">
-<img src="cafe/1.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant2.jpg" width="100%">
-<img src="cafe/64532879.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant3.jpg" width="100%">
-<img src="cafe/3234523.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant4.jpg" width="100%">
-<img src="cafe/4.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant5.jpg" width="100%">
-<img src="cafe/1.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant6.jpg" width="100%">
-<img src="cafe/64532879.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-<a class="option1" href="option/option.html">
-<div class="img">
-<img class="ax" src="img/resturant7.jpg" width="100%">
-<img src="cafe/3234523.png" class="fuck">
-<div class="overlay"></div>
-</div>
-  <h2>رستوران فلان</h2>
-  <p>ساری خیابان فلان</p>
-</a>
-</div>
-</div>
-      <!-- Sidebar -->
-<div class="sidebar">
-  <button class="close-btn">×</button>
-  <img class="logo" src="img/logo.png" alt="logo">
-<div class="sidebar-content">
-  <div class="accordion">
-    <h1 class="accordion-title">دسته بندی</h1>
-    <ul class="accordion-content">
-      <li><a href="#">کافه</a></li>
-      <li><a href="#">رستوران</a></li>
-      <li><a href="#">مجموعه تفریحی</a></li>
-      <li><a href="#">درمانگاه</a></li>
-      <li><a href="#">مجموعه ورزشی</a></li>
-    </ul>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="logo">لوگو</div>
+        <nav class="menu">
+          <a href="index.html" class="menu-item active">داشبورد</a>
+          <a href="add-business.html" class="menu-item">افزودن کسب‌وکار</a>
+          <a href="user-dashboard.html" class="menu-item">کاربران و تعاملات</a>
+          <a href="delete-dashboard.html" class="menu-item">حذف‌ها</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero">
+        <h1>خوش آمدید</h1>
+        <p>اینجا مدیریت کسب‌وکارها، کاربران و تعاملات را انجام دهید.</p>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <div class="card-title">کسب‌وکارهای فعال</div>
+          <div class="card-value">۱۲۴</div>
+        </div>
+        <div class="card">
+          <div class="card-title">کاربران ثبت‌شده</div>
+          <div class="card-value">۳۸۰</div>
+        </div>
+        <div class="card">
+          <div class="card-title">کامنت‌های جدید</div>
+          <div class="card-value">۲۱</div>
+        </div>
+      </section>
+
+      <section class="recent box">
+        <h2>آخرین کسب‌وکارهای ثبت‌شده</h2>
+        <div class="list">
+          <article class="item">
+            <img src="../img/cafe1.jpg" alt="کافه" />
+            <div class="meta">
+              <div class="title">کافه لاله‌زار</div>
+              <div class="sub">کافه — تهران</div>
+            </div>
+            <div class="stats">
+              <div>بازدید: ۱۵۲</div>
+              <div>لایک: ۴۷</div>
+            </div>
+          </article>
+          <article class="item">
+            <img src="../img/resturant1.jpg" alt="رستوران" />
+            <div class="meta">
+              <div class="title">رستوران نیاوران</div>
+              <div class="sub">رستوران — تهران</div>
+            </div>
+            <div class="stats">
+              <div>بازدید: ۸۹</div>
+              <div>لایک: ۲۳</div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
   </div>
 
-  <div class="accordion">
-    <h1 class="accordion-title">جستجو و فیلتر</h1>
-    <ul class="accordion-content">
-      <li><a href="#">مکان</a></li>
-      <li><a href="#">نزدیک من</a></li>
-      <li><a href="#">امتیاز من</a></li>
-      <li><a href="#">قیمت/تخفیف</a></li>
-      <li><a href="#">ساعت کاری</a></li>
-    </ul>
-  </div>
-
-  <div class="accordion">
-    <h1 class="accordion-title">امکانات کاربری</h1>
-    <ul class="accordion-content">
-      <li><a href="login.html">پروفایل من</a></li>
-      <li><a href="#">علاقه مندی</a></li>
-      <li><a href="#">نظرات من</a></li>
-      <li><a href="#">رزروها</a></li>
-    </ul>
-  </div>
-
-  <div class="accordion">
-    <h1 class="accordion-title">ویژه</h1>
-    <ul class="accordion-content">
-      <li><a href="#">محبوب ترین ها</a></li>
-      <li><a href="#">جدیدترین ها</a></li>
-      <li><a href="#">پیشنهاد روز</a></li>
-    </ul>
-  </div>
-
-  <div class="accordion">
-    <h1 class="accordion-title">پشتیبانی</h1>
-    <ul class="accordion-content">
-      <li><a href="#">درباره ما</a></li>
-      <li><a href="#">تماس</a></li>
-      <li><a href="#">قوانین FAQ</a></li>
-    </ul>
-  </div>
-</div>
-<div class="sidebar-socials">
-  <a href="#" class="circle"><img src="icons/icons8-telegram-96.png" alt="Telegram"></a>
-  <a href="#" class="circle"><img src="icons/icons8-instagram-96.png" alt="Instagram"></a>
-  <a href="#" class="circle"><img src="icons/icons8-whatsapp-96.png" alt="WhatsApp"></a>
-  <a href="#" class="circle"><img src="icons/icons8-email-96.png" alt="Email"></a>
-  <a href="#" class="circle"><img src="icons/icons8-phone-96.png" alt="Phone"></a>
-</div>
-</div>
-<div class="menu" id="menu">
-  <button class="menu-btn" id="menuBtn">≡</button>
-  <div class="menu-item"><img width="20" height="20" style="margin-right: 5px;" src="icons/icons8-crown-96.png" alt="crown"/></div>
-  <div class="menu-item"><a href="login.html"><img width="20" height="20" style="margin-right: 5px;" src="icons/icons8-user-96.png" alt="user-male-circle"/></a></div>
-  <div class="menu-item"><img width="20" height="20" style="margin-right: 5px;" src="icons/icons8-heart-96.png" alt="hearts"/></div>
-  <div class="menu-item"><img width="20" height="20" style="margin-right: 5px;" src="icons/icons8-exit-96.png" alt="exit"/></div>
-</div>
-
-<footer>
-  <div class="etemad">
-    <button><img src="icons/new_logo11.png"></button>
-    <button><img src="icons/new_logo11.png"></button>
-  </div>
-  <div class="links">
-    <a href="#">درباره ما</a>
-    <a href="#">ارتباط با ما</a>
-    <a href="#">قوانین</a>
-    <a href="#">لوگو های اعتماد</a>
-    <a href="#">سوال های پر تکرار</a>
-  </div>
-  <div class="social2">
-    <button><img src="icons/icons8-instagram-96.png"></button>
-    <button><img src="icons/icons8-telegram-96.png"></button>
-    <button><img src="icons/icons8-whatsapp-96.png"></button>
-    <button><img src="icons/icons8-email-96.png"></button>
-  </div>
-</footer>
-<script src="main.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
